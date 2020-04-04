@@ -1,3 +1,9 @@
 Project:
 Creating a BlackJack game that interacts with user through a shell.
-:wq
+
+Created with:
+Python
+
+Date: 2020-04-04
+
+
