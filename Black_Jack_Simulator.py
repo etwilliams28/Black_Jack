@@ -50,31 +50,6 @@ def hit(hand,deck):
     hand.append(deck.pop())
     return(hand)
 
-def dealer_rules(hand,deck):
-    random.shuffle(deck)
-    hand.append(deck.pop())
-    return(hand)
-
-def black_jack(player_hand, dealer_hand):
-    if player_hand == 21:
-        print("Congrats your just got BlackJack")
-    elif dealer_hand == 21:
-        print("That,sucks the dealer just got Blackjack, you lost bub")
-
-
-def score(player_hand,dealer_hand):
-    while count(player_hand) <=21 and count(player_hand) <=21:
-        if count(player_hand) == 21:
-            print('Congrats you won! you just got BlackJack')
-        elif count(dealer_hand) == 21:
-            print("You loose, the dealer just got BlackJack")
-        elif count(player_hand) > 21:
-            print("Oopps you busted")
-        elif count(player_hand) > count(dealer_hand):
-            print('Congrats you win, good for you')
-        elif count(player_hand) < count(dealer_hand):
-            print('You loose, dealers hand was closer to 21')
-
 """ attempting another method of dealing the cards or simply coding the game
 in general"""
 
@@ -126,66 +101,3 @@ while True:
         standing = True
         while count(dealer_hand) <=16:
             print(hit(dealer_hand,deck))
-
-
-"""
-
-player_hand = deal(deck)
-dealer_hand = deal(deck)
-print(player_hand)
-print("looks like your have a total of :{} ".format(count(player_hand)))
-print("...")
-print(dealer_hand)
-print("Looks like the dealer has a total of {}".format(count(dealer_hand)))
-
-##(hit(player_hand,deck)) //This is commented out for now
-question = 0
-question = (input("Would you like to hit or stay or quit?".lower()))
-
-while question != 'quit'
-    if question == 'hit':
-        if count(player_hand) < 21:
-            player_hand = hit(player_hand,deck)
-            if count(dealer_hand) < 17:
-                dealer_hand = (hit(dealer_hand,deck))
-                print("you now have {}, for a toal of {} in your hand".format(player_hand,count(player_hand)))
-                print("the dealer has {}, for a toal of {} in his hand".format(dealer_hand,count(dealer_hand)))
-                print(score(player_hand,dealer_hand))
-
-    elif question == "stay":
-        player_hand = player_hand
-        if count(dealer_hand) < 17:
-            dealer_hand = (hit(dealer_hand,deck))
-            score(player_hand,dealer_hand)
-
-
-while count(player_hand) <= 21:
-    hit_or_stay = (input("Would you like to hit or stay? ".lower()))
-    if hit_or_stay == "hit":
-        player_hand = (hit(player_hand,deck))
-        print("")
-        print("your hand is: {}".format(player_hand))
-        black_jack(player_hand,dealer_hand)
-        print(" ")
-        print("you now have a total of count of : {}".format(count(player_hand)))
-
-    while count(dealer_hand) <= 16:
-        dealer_hand = hit(dealer_hand,deck)
-        print(" ")
-        print("dealer hand is: {} for a total of {}".format(dealer_hand,count(dealer_hand)))
-        print()
-        continue
-        black_jack(player_hand,dealer_hand)
-        score(player_hand,dealer_hand)
-        break
-
-    else:
-        print(" ")
-        print("you have chosen to stay and your count remains at : {}".format(count(player_hand)))
-        print(" ")
-        print("the dealers hand is {}".format(count(dealer_hand)))
-    break
-score(player_hand,dealer_hand)
-
-
-"""
